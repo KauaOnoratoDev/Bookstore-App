@@ -84,12 +84,12 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
-        "NAME": os.environ.get("SQL_DATABASE", "postgres"),  # Nome do banco de dados PostgreSQL
-        "USER": os.environ.get("SQL_USER", "postgres"),      # Usuário do PostgreSQL
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),  # Senha do PostgreSQL
-        "HOST": os.environ.get("SQL_HOST", "db"),            # Nome do serviço do contêiner do PostgreSQL (ou IP do contêiner, se necessário)
-        "PORT": os.environ.get("SQL_PORT", "5432"),          # Porta padrão do PostgreSQL
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("SQL_USER", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
 
