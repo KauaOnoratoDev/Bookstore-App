@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'kauaOnorato.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'kauaonorato.pythonanywhere.com']
 
 
 # Application definition
@@ -153,12 +153,4 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "default-secret-key")
-if not SECRET_KEY:
-    raise ValueError("A variável de ambiente DJANGO_SECRET_KEY não está definida!")
-
-DEBUG = int(os.environ.get("DEBUG", default=0))
-
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
+STATIC_ROOT = BASE_DIR / 'staticfiles'
